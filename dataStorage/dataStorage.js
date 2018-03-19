@@ -14,7 +14,7 @@ fs.open(filePath, 'a+', function (err, file) { // opening the file in appending 
   fs.fstat(fd,function (err, stat) {
     if (err) throw err;
     if(stat.size==0){// if the file is empty, we write the first 'key' line
-      fs.appendFile(fd, "date,value\r\n", function (err) {
+      fs.appendFile(fd, "date,value,note,beats\r\n", function (err) {
         if (err) throw err;
         console.log("File was empty, added key line to csv.");
      });
@@ -28,7 +28,8 @@ fs.open(filePath, 'a+', function (err, file) { // opening the file in appending 
 
 //---------------------- SERIAL COMMUNICATION --------------------------------//
 // start the serial port connection and read on newlines
-const serial = new serialPort('/dev/ttyUSB0', {
+// '/dev/ttyUSB0'
+const serial = new serialPort('/dev/cu.SLAB_USBtoUART', {
  baudRate:115200
 
 });
@@ -39,7 +40,7 @@ const parser = new readLine({
 
 serial.pipe(parser);
 parser.on('data', function(data) {
-  var newEntry = ((Date.now())+','+ data+'\r\n'); //connect the data to the current time
+  var newEntry = ((Date.now()) + ',' + data + '\r\n'); //connect the data to the current time
   fs.appendFile(fd, newEntry, function (err) { // append the new entry to the file
     if (err) throw err;
   });

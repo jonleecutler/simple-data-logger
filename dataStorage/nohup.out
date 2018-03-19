@@ -1,0 +1,13 @@
+(node:9684) UnhandledPromiseRejectionWarning: Unhandled promise rejection (rejection id: 1): Error: Error: No such file or directory, cannot open /dev/ttyUSB0
+(node:9684) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
+Opened file
+Opened file
+(node:9802) UnhandledPromiseRejectionWarning: Unhandled promise rejection (rejection id: 1): Error: Error: No such file or directory, cannot open /dev/ttyUSB0
+(node:9802) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
+Opened file
+(node:9807) UnhandledPromiseRejectionWarning: Unhandled promise rejection (rejection id: 1): Error: Error: No such file or directory, cannot open /dev/ttyUSB0
+(node:9807) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
+Opened file
+(node:9865) UnhandledPromiseRejectionWarning: Unhandled promise rejection (rejection id: 1): Error: Error: No such file or directory, cannot open /dev/ttyUSB0
+(node:9865) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
+File was empty, added key line to csv.

@@ -18,8 +18,9 @@
   },
   "homepage": "https://github.com/FAR-Lab/simple-data-logger.git#readme",
   "dependencies": {
+    "csv2html": "0.0.1",
     "express": "^4.16.3",
-    "socket.io": "^2.0.4",
-    "file-tail": "^0.3.0"
+    "file-tail": "^0.3.0",
+    "socket.io": "^2.0.4"
   }
 }
