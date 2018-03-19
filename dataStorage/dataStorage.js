@@ -28,8 +28,8 @@ fs.open(filePath, 'a+', function (err, file) { // opening the file in appending 
 
 //---------------------- SERIAL COMMUNICATION --------------------------------//
 // start the serial port connection and read on newlines
-// '/dev/ttyUSB0'
-const serial = new serialPort('/dev/cu.SLAB_USBtoUART', {
+// '/dev/cu.SLAB_USBtoUART'
+const serial = new serialPort('/dev/ttyUSB0', {
  baudRate:115200
 
 });
