@@ -83,9 +83,6 @@ void loop(){
 }
 
 void doRead() {
-//  Serial.write((String("doRead:") + String(readAddress) + String("-") + String(EEPROM.read(readAddress)) + String("\r\n")).c_str());
-//  readAddress++;
-  
   // there are no more values to be read
   if (address < 0 || address > 1022) {
     return;
@@ -96,14 +93,7 @@ void doRead() {
   }
 
   int nIndex = EEPROM.read(address++);
-
-  String logData = String("readSound-note") + ":" + String(address - 1) + "," + String(nIndex) + "\r\n";
-  Serial.write(logData.c_str());
-  
   int dIndex = EEPROM.read(address++);
-
-  logData = String("readSound-duration") + ":" + String(address - 1) + "," + String(dIndex) + "\r\n";
-  Serial.write(logData.c_str());
 
   if (nIndex >= 1 && nIndex <= 7 &&
       dIndex >= 1 && dIndex <= 8) {
@@ -133,20 +123,10 @@ void writeSound(int noteIndex, int durationIndex) {
     return;
   }
 
-  String logData = String("writeSound-note") + ":" + String(address) + "," + String(noteIndex) + "\r\n";
-  Serial.write(logData.c_str());
-
   EEPROM.write(address++, noteIndex);
-
-  logData = String("writeSound-duration") + ":" + String(address) + "," + String(durationIndex) + "\r\n";
-  Serial.write(logData.c_str());
-  
   EEPROM.write(address++, durationIndex);
 
   noteCount++;
-
-  logData = String("noteCount:") + String(noteCount) + "\r\n";
-  Serial.write(logData.c_str());
 }
 
 void playSound(int noteIndex, int durationIndex) {
